@@ -9,8 +9,8 @@ require 'rdoc/rdoc' unless defined?(RDoc::Markup::ToHtml)
 # :nocov:
 require 'rdoc/generator'
 
-# Hanna version of RDoc::Generator
-class RDoc::Generator::Hanna 
+# RDoc-custom-template version of RDoc::Generator
+class RDoc::Generator::Custom
   STYLE            = 'styles.css'
   LAYOUT           = 'layout.erb'
 
@@ -47,7 +47,7 @@ class RDoc::Generator::Hanna
     @options = options
     @store = store
 
-    @templatedir = Pathname.new File.expand_path('../hanna-nouveau/template_files', __FILE__)
+    @templatedir = Pathname.new File.expand_path('../rdoc-custom-template/template_files', __FILE__)
 
     @files      = nil
     @classes    = nil
@@ -296,5 +296,5 @@ class RDoc::Markup::ToHtml
   LIST_TYPE_TO_HTML[:LABEL] = ['<table class="rdoc-list label-list"><tbody>', '</tbody></table>']
   LIST_TYPE_TO_HTML[:NOTE]  = ['<table class="rdoc-list note-list"><tbody>',  '</tbody></table>']
 
-  prepend RDoc::Generator::Hanna::LabelListTable
+  prepend RDoc::Generator::Custom::LabelListTable
 end

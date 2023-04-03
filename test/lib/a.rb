@@ -2,9 +2,9 @@
 #
 # * regular list
 #
-# http://github.com/jeremyevans/hanna-nouveau
+# http://github.com/Cyfon7/rdoc-custom-template
 #
-# https://github.com/jeremyevans/hanna-nouveau
+# https://github.com/Cyfon7/rdoc-custom-template
 class A
   module B
     def c

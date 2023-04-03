@@ -1,47 +1,47 @@
-= Hanna-nouveau
+= RDoc-custom-template
 
-Hanna-nouveau is an RDoc generator built with simplicity, beauty
+RDoc-custom-template is an RDoc generator built with simplicity, beauty
 and ease of browsing in mind.
 
 == Installation
 
-    gem install hanna-nouveau
+    gem install rdoc-custom-template
 
 == Usage
 
-    rdoc -o doc -f hanna lib
+    rdoc -o doc -f custom lib
 
 An alternative is to set the `RDOCOPT` environment variable:
 
-    RDOCOPT="-f hanna"
+    RDOCOPT="-f custom"
 
-This will make RDoc always use hanna-nouveau unless it is explicitly overridden.
+This will make RDoc always use rdoc-custom-templates unless it is explicitly overridden.
 
 == Integrating with RubyGems
 
 If you put the following line in your .gemrc, this will make
-RubyGems use Hanna for all rdoc generation:
+RubyGems use RDoc-custom-template for all rdoc generation:
 
-    rdoc: -f hanna
+    rdoc: -f custom
 
 After doing this, if you wish to have documentation for all your installed gems
-to be formatted in hanna:
+to be formatted in RDocs-custom-template:
 
     gem rdoc --all --overwrite
 
 == Rake task
 
 For repeated generation of API docs, you can set up a Rake task. Set
-hanna as the RDoc generator:
+RDoc-custom-template as the RDoc generator:
 
     require 'rdoc/task'
     RDoc::Task.new do |rdoc|
-      rdoc.generator = 'hanna'
+      rdoc.generator = 'custom'
     end
 
 == Modification to RDoc
 
-Hanna makes a small modification to RDoc to generate more
+RDoc-custom-template makes a small modification to RDoc to generate more
 friendly documentation.  It changes label lists to use a table
 instead of a description list, since it is very difficult to
 get visually appealing styling for description lists without

@@ -1,1 +1,1 @@
-require 'hanna-nouveau'
+require 'rdoc-custom-template'

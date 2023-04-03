@@ -19,10 +19,10 @@ require 'rdoc/rdoc'
 require 'fileutils'
 require 'find'
 
-describe 'hanna-nouveau' do
+describe 'rdoc-custom-template' do
   before(:all) do
     Dir.chdir("test") do
-      RDoc::RDoc.new.document(%w'-q -O -f hanna -o rdoc lib')
+      RDoc::RDoc.new.document(%w'-q -O -f custom -o rdoc lib')
     end
   end
   after(:all) do
@@ -62,8 +62,8 @@ END
 
   it "should set target to _top for both http and http links" do
     t = File.binread('test/rdoc/classes/A.html')
-    t.must_include 'target="_top" href="http://github.com/jeremyevans/hanna-nouveau">github.com/jeremyevans/hanna-nouveau</a></p>'
-    t.must_include 'target="_top" href="https://github.com/jeremyevans/hanna-nouveau">github.com/jeremyevans/hanna-nouveau</a></p>'
+    t.must_include 'target="_top" href="http://github.com/Cyfon7/rdoc-custom-template">github.com/Cyfon7/rdoc-custom-template</a></p>'
+    t.must_include 'target="_top" href="https://github.com/Cyfon7/rdoc-custom-template">github.com/Cyfon7/rdoc-custom-template</a></p>'
   end
 
   it "should use tables for labeled lists" do
