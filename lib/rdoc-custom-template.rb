@@ -47,7 +47,7 @@ class RDoc::Generator::Custom
     @options = options
     @store = store
 
-    @templatedir = Pathname.new File.expand_path('../rdoc-custom-template/template_files', __FILE__)
+    @templatedir = Pathname.new File.expand_path('../rdoc-custom-template/template', __FILE__)
 
     @files      = nil
     @classes    = nil
