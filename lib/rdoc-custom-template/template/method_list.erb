@@ -28,12 +28,12 @@ unless methods.empty? %>
               <% list.each do |method|
                    if method.respond_to?(:aref)
                      if method.name.to_s.empty? && method.call_seq %>
-                       <li><%= link_to(method.call_seq.gsub(/<br\s*\/?>/, '').split(/[\r\n]+/).map{ |s| s.split(/([({]+|\[\{|\s+(#?=>|&rarr;)\s+)/).first.sub(/^[A-Za-z0-9_:]+\./, '').sub(/\s+=\s+.*/, '=').strip }.uniq.join('<br />\n'), '#' + method.aref) %></li>
+                       <%= link_to(method.call_seq.gsub(/<br\s*\/?>/, '').split(/[\r\n]+/).map{ |s| s.split(/([({]+|\[\{|\s+(#?=>|&rarr;)\s+)/).first.sub(/^[A-Za-z0-9_:]+\./, '').sub(/\s+=\s+.*/, '=').strip }.uniq.join('<br />\n'), '#' + method.aref, class: "list-group-item") %>
                   <% else %>
-                       <%= link_to(method.name, '#' + method.aref, class: 'list-group-item') %>
+                       <%= link_to(method.name, '#' + method.aref, class: "list-group-item") %>
                   <% end 
                    elsif method.respond_to?(:html_name) %>
-                     <%= link_to(method.name, "#method-#{method.html_name}", class: 'list-group-item') %>
+                     <%= link_to(method.name, "#method-#{method.html_name}", class: "list-group-item") %>
                 <% else %>
                      <li class='list-group-item'><%=h method.name %></li>
                 <% end
