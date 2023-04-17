@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = "rdoc-custom-template"
-  s.version = '1.4.0'
+  s.version = '1.5.0'
   s.authors = ["Jorge Sifontes", "Jeremy Evans", "Erik Hollensbe", "James Tucker", "Mislav Marohnic"]
   s.email = "jorgesifontes.cl@gmail.com"
   s.extra_rdoc_files = [ "LICENSE", "README.rdoc", "CHANGELOG" ]
@@ -30,8 +30,8 @@ Gem::Specification.new do |s|
     "source_code_uri"   => 'https://github.com/Cyfon7/rdoc-custom-template'
   }
 
-  s.required_ruby_version = ">= 2.2"
-  s.add_dependency('rdoc', [">= 4"])
+  s.required_ruby_version = ">= 2.7"
+  s.add_dependency('rdoc', [">= 5"])
   s.add_development_dependency('minitest-hooks')
   s.add_development_dependency('minitest-global_expectations')
 end
